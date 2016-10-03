@@ -6,8 +6,16 @@ GIT
       omniauth (~> 1.0)
       rack-openid (~> 1.3.1)
 
+GIT
+  remote: git://github.com/david50407/rack-openid.git
+  revision: cb1c5275bc78de1b650cf036424176ced4aa774c
+  specs:
+    rack-openid (1.3.1)
+      rack (>= 1.1.0)
+      ruby-openid (>= 2.1.8)
+
 GEM
-  remote: https://rubygems.nos.ncu.edu.tw/
+  remote: https://rubygems.org/
   specs:
     actioncable (5.0.0.1)
       actionpack (= 5.0.0.1)
@@ -98,9 +106,6 @@ GEM
     pkg-config (1.1.7)
     puma (3.6.0)
     rack (2.0.1)
-    rack-openid (1.3.1)
-      rack (>= 1.1.0)
-      ruby-openid (>= 2.1.8)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.1)
@@ -183,6 +188,7 @@ DEPENDENCIES
   omniauth (~> 1.3)
   omniauth-ncu-portal-openid!
   puma (~> 3.0)
+  rack-openid!
   rails (~> 5.0.0, >= 5.0.0.1)
   sass-rails (~> 5.0)
   spring

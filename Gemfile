@@ -1,4 +1,4 @@
-source 'https://rubygems.nos.ncu.edu.tw'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'doorkeeper', '~> 4.2'
 gem 'omniauth', '~> 1.3'
+gem 'rack-openid', github: 'david50407/rack-openid'
 gem 'omniauth-ncu-portal-openid', github: 'david50407/omniauth-ncu-portal-openid'
 
 # Use jquery as the JavaScript library
