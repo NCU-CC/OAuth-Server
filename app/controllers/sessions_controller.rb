@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def create
     User.find_or_create_by(portal_id: portal_id)
     session[:portal_id] = portal_id
