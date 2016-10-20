@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
 
   def create
     User.find_or_create_by(portal_id: portal_id)
