@@ -109,3 +109,19 @@ Doorkeeper.configure do
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
 end
+
+module Doorkeeper
+  class AccessToken
+    belongs_to :user, foreign_key: 'resource_owner_id'
+
+    def as_json(_options = {})
+      {
+        resource_owner_id:  user.portal_id,
+        scopes:             scopes,
+        expires_in_seconds: expires_in_seconds,
+        application:        { uid: application.try(:uid) },
+        created_at:         created_at.to_i
+      }
+    end
+  end
+end
