@@ -7,6 +7,11 @@ class SessionsController < ApplicationController
     redirect_to session[:return_to]
   end
 
+  def destroy
+    reset_session
+    redirect_to root_path
+  end
+
   def portal_id
     request.env['omniauth.auth'].info[:student_id]
   end

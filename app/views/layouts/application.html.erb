@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Oauth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCU OAuth | 國立中央大學</title>
     <%= csrf_meta_tags %>
+    <%- if flash[:notice].present? %>
+      <meta name="notice" content="<%= flash[:notice] %>">
+    <% end -%>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <ul id="side-nav" class="side-nav">
+      <li><div class="userView light-blue">
+        <a><%= image_tag 'ncu_avatar.jpg', class: 'circle' %></a>
+        <a><span class="name"><%= portal_id %></span></a>
+        <a><span class="email"><span></a>
+      </div></li>
+      <li class="no-padding">
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+          <a class="collapsible-header waves-effect waves-teal">使用者功能</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a>使用者說明</a></li>
+              <li><a href="/oauth/authorized_applications">授權管理</a></li>
+            </ul>
+          </div>
+          </li>
+          <li>
+          <a class="collapsible-header waves-effect waves-teal">開發者功能</a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a>開發者說明</a></li>
+              <li><a>開發者提案</a></li>
+              <li><a href="/oauth/applications">應用服務管理</a></li>
+            </ul>
+          </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper light-blue">
+        <a href="#" class="brand-logo center">NCU OAuth</a>
+        <ul class="left">
+          <li><a data-activates="side-nav" id="button-menu"><i class="material-icons">menu</i></a></li>
+        </ul>
+        <%- unless portal_id.nil? %>
+          <ul class="right">
+            <li><a href="/logout"><i class="material-icons">exit_to_app</i></a></li>
+          </ul>
+        <% end -%>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
