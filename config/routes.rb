@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   end
   root to: 'dummy#dummy'
   match '/auth/ncu_portal_open_id/callback', to: 'sessions#create', via: [:get, :post]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/oauth/token/old_info/:token_string', to: 'oauth/token_info#show'
 end
