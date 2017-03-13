@@ -14,7 +14,6 @@ module Oauth
 
     config.to_prepare do
       Doorkeeper::ApplicationsController.layout "application"
-      Doorkeeper::AuthorizationsController.layout "application"
       Doorkeeper::AuthorizedApplicationsController.layout "application"
     end
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 

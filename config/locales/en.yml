@@ -20,4 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  title: "NCU OAuth"
+  contact_us: "Contact Us"
+  email: "mailto:mobile@cc.ncu.edu.tw"
+  welcome: "Welcome To NCU OAuth"
+  sign_in: "Sign in with NCU Portal"
+  sing_out: "Sign out"
+  end_user: "End user"
+  developer: "Developer"
+  authorized_applications: "Authorized applications"
+  applications: "Applications"
+  about: "About"
+  proposal: "Proposal"

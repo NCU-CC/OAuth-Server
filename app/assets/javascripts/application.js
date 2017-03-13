@@ -16,9 +16,9 @@
 //= require materialize-sprockets
 //= require_tree .
 $(document).on('turbolinks:load', function() {
-    $('#button-menu').sideNav();
-    $('.collapsible').collapsible();
-    Waves.displayEffect()
-    Materialize.toast($('meta[name=notice]').attr('content'), 2000)
-    Materialize.updateTextFields();
+  $('#button-menu').sideNav();
+  $('.collapsible').collapsible();
+  Waves.displayEffect()
+  Materialize.toast($('meta[name=notice]').attr('content'), 2000)
+  Materialize.updateTextFields();
 });

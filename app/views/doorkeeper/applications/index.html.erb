@@ -1,22 +1,18 @@
 <!--div>
   <h1><%= t('.title') %></h1>
 </div-->
-<table class="striped">
-  <thead>
-  <tr>
-    <th><%= t('.name') %></th>
-    <th><%= t('.callback_url') %></th>
-  </tr>
-  </thead>
-  <tbody>
+<%= content_tag :div, class: "row" do %>
   <% @applications.each do |application| %>
-    <tr id="application_<%= application.id %>">
-      <td><%= link_to application.name, oauth_application_path(application) %></td>
-      <td><%= application.redirect_uri %></td>
-    </tr>
+    <%= content_tag :div, class: "col s12 m6 l4" do %>
+      <%= content_tag :div, id: "application_#{application.id}", class: "card" do %>
+        <%= content_tag :div, class: "card-content" do %>
+          <span class="card-title"><%= link_to application.name, oauth_application_path(application) %></span>
+          <p><%= application.redirect_uri %></p>
+        <% end %>
+      <% end %>
+    <% end %>
   <% end %>
-  </tbody>
-</table>
+<% end %>
 <div class="fixed-action-btn">
   <%= link_to raw('<i class="large material-icons">add</i>'), new_oauth_application_path, class: 'btn-floating btn-large light-blue' %>
 </div>
