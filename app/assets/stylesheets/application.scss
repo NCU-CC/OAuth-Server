@@ -1,0 +1,27 @@
+/*
+*= require material_icons
+*/
+@import "materialize";
+.code {
+  overflow-x: auto;
+}
+.card {
+  max-width: 100%;
+}
+.side-nav a {
+  padding: 0px 16px;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+.fixed-action-btn {
+  bottom: 85px;
+}
+footer.page-footer {
+  margin-top: 0px;
+}

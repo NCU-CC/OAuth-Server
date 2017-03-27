@@ -1,25 +1,15 @@
-<header class="page-header">
-  <h1><%= t('doorkeeper.authorized_applications.index.title') %></h1>
-</header>
-
-<main role="main">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th><%= t('doorkeeper.authorized_applications.index.application') %></th>
-      <th><%= t('doorkeeper.authorized_applications.index.created_at') %></th>
-      <th></th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @applications.each do |application| %>
-      <tr>
-        <td><%= application.name %></td>
-        <td><%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %></td>
-        <td><%= render 'delete_form', application: application %></td>
-      </tr>
+<%= content_tag :div, class: "row" do %>
+  <% @applications.each do |application| %>
+    <%= content_tag :div, class: "col s12 m6 l4" do %>
+      <%= content_tag :div, class: "card" do %>
+        <%= content_tag :div, class: "card-content" do %>
+          <span class="card-title"><%= application.name %></span>
+          <p><%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %></p>
+        <% end %>
+        <%= content_tag :div, class: "card-action" do %>
+          <%= render 'delete_form', application: application %>
+        <% end %>
+      <% end %>
     <% end %>
-    </tbody>
-  </table>
-</main>
+  <% end %>
+<% end %>

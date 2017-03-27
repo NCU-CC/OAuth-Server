@@ -11,5 +11,13 @@ module Oauth
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.to_prepare do
+      Doorkeeper::ApplicationsController.layout "application"
+      Doorkeeper::AuthorizedApplicationsController.layout "application"
+    end
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+      html_tag
+    }
   end
 end

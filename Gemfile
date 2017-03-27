@@ -21,6 +21,9 @@ gem 'omniauth', '~> 1.3'
 gem 'rack-openid', github: 'david50407/rack-openid'
 gem 'omniauth-ncu-portal-openid', github: 'david50407/omniauth-ncu-portal-openid'
 
+gem 'materialize-sass', '~> 0.97'
+gem 'material_icons'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
