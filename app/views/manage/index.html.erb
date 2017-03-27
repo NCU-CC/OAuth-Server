@@ -4,7 +4,9 @@
     <div class="col s12 m6 l4 offset-m3 offset-l4">
       <div class="card hoverable z-depth-5">
         <div class="card-content">
-          <a href="/oauth/applications" class="waves-effect waves-light btn"><%= t('sign_in') %></a>
+          <%= form_tag '/sign_in' do %>
+            <%= submit_tag t('sign_in'), class: 'waves-effect waves-light btn' %>
+          <% end %>
         </div>
       </div>
     </div>
