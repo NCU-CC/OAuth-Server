@@ -1,7 +1,8 @@
-<!--div class="page-header">
-<h1><%= t('.title', name: @application.name) %></h1>
-</div-->
-
+<% content_for :navigate_up do %>
+  <%= link_to oauth_applications_path do %>
+    <i class="material-icons">arrow_back</i>
+  <% end %>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col m9 card">
@@ -31,7 +32,11 @@
     </div>
 
     <div class="col m3">
-      <p><%= link_to raw('<i class="material-icons left">mode_edit</i>編輯'), edit_oauth_application_path(@application), class: 'btn blue' %></p>
+      <p>
+        <%= link_to edit_oauth_application_path(@application), class: 'btn blue' do %>
+          <i class="material-icons left">mode_edit</i><%= t('doorkeeper.applications.buttons.edit') %>
+        <% end %>
+      </p>
 
       <p><%= render 'delete_form', application: @application %></p>
     </div>

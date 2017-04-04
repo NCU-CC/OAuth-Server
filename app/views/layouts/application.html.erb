@@ -32,7 +32,7 @@
               </div>
             </li>
             <li>
-              <a class="collapsible-header waves-effect waves-teal"><i class="material-icons">computer</i><%= t('developer') %></a>
+              <a class="collapsible-header waves-effect waves-teal"><i class="material-icons">memory</i><%= t('developer') %></a>
               <div class="collapsible-body">
                 <ul>
                   <li><a class="waves-effect waves-teal"><%= t('about') %></a></li>
@@ -50,10 +50,22 @@
     <% end -%>
     <nav>
       <div class="nav-wrapper light-blue">
-        <a href="#" class="brand-logo center">NCU OAuth</a>
         <%- if sign_in? %>
           <ul class="left">
-            <li><a data-activates="side-nav" id="button-menu"><i class="material-icons">menu</i></a></li>
+            <li>
+              <%- if content_for? :navigate_up %>
+                <a data-activates="side-nav" id="button-menu" style="display: none;"><i class="material-icons">menu</i></a>
+                <%= yield :navigate_up %>
+              <%- else  %>
+                <a data-activates="side-nav" id="button-menu"><i class="material-icons">menu</i></a>
+              <% end -%>
+            </li>
+          </ul>
+        <% end -%>
+        <%= link_to 'NCU OAuth', root_path, class: 'brand-logo' %>
+        <%- if content_for? :menu %>
+          <ul class="right">
+            <%= yield :menu %>
           </ul>
         <% end -%>
       </div>

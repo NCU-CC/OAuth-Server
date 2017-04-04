@@ -16,7 +16,7 @@
 //= require materialize-sprockets
 //= require_tree .
 $(document).on('turbolinks:load', function() {
-  $('#button-menu').sideNav();
+  $('#button-menu').sideNav({ draggable: true });
   $('.collapsible').collapsible();
   Waves.displayEffect()
   Materialize.toast($('meta[name=notice]').attr('content'), 2000)

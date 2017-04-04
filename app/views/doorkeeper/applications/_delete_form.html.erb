@@ -1,3 +1,5 @@
 <%= form_tag oauth_application_path(application), method: :delete do %>
-  <button type="submit" class="btn red" onclick="return confirm('確定刪除？')" ><i class="material-icons left">delete_forever</i>刪除</button>
+  <%= button_tag onclick: "return confirm('#{ t('doorkeeper.applications.confirmations.destroy') }')", class: 'btn red', type: 'submit' do %>
+    <i class="material-icons left">delete_forever</i><%= t('doorkeeper.applications.buttons.destroy') %></button>
+  <% end%>
 <% end %>

@@ -1,4 +1,4 @@
-<%= content_tag :div, class: "row" do %>
+<%= content_tag :div, class: "row container" do %>
   <%= form_for application, class: "col s12", url: doorkeeper_submit_path(application), html: {role: 'form'} do |f| %>
     <% if application.errors.any? %>
       <div class="alert alert-danger" data-alert><p><%= t('doorkeeper.applications.form.error') %></p></div>
@@ -40,8 +40,12 @@
     <% end %>
 
     <%= content_tag :div, class: "row" do %>
-      <button type="submit" class="btn light-green"><i class="material-icons left">send</i>送出</button>
-      <%= link_to raw('<i class="material-icons left">cancel</i>取消'), oauth_applications_path, class: "btn amber" %>
+      <%= button_tag class: 'btn light-green', type: 'submit' do %>
+        <i class="material-icons left">send</i><%= t('doorkeeper.applications.buttons.submit') %>
+      <% end %>
+      <%= link_to oauth_applications_path, class: 'btn amber' do %>
+        <i class="material-icons left">cancel</i><%= t('doorkeeper.applications.buttons.cancel') %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

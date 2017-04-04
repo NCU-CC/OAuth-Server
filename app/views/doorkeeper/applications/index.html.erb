@@ -1,6 +1,3 @@
-<!--div>
-  <h1><%= t('.title') %></h1>
-</div-->
 <%= content_tag :div, class: "row" do %>
   <% @applications.each do |application| %>
     <%= content_tag :div, class: "col s12 m6 l4" do %>
@@ -13,6 +10,8 @@
     <% end %>
   <% end %>
 <% end %>
-<div class="fixed-action-btn">
-  <%= link_to raw('<i class="large material-icons">add</i>'), new_oauth_application_path, class: 'btn-floating btn-large light-blue' %>
-</div>
+<% content_for :menu do %>
+  <%= link_to new_oauth_application_path do %>
+    <i class="large material-icons">add</i>
+  <% end %>
+<% end %>

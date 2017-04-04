@@ -1,5 +1,7 @@
-<!--div class="page-header">
-  <h1><%= t('.title') %></h1>
-</div-->
+<% content_for :navigate_up do %>
+  <%= link_to oauth_application_path(@application) do %>
+    <i class="material-icons">arrow_back</i>
+  <% end %>
+<% end %>
 
 <%= render 'form', application: @application %>
