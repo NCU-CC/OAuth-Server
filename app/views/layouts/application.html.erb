@@ -63,7 +63,11 @@
           </ul>
         </li>
         <%- if sign_in? %>
-          <li><a href="/sign_out" class="waves-effect waves-teal"><i class="material-icons">exit_to_app</i><%= t('sign_out') %></a></li>
+          <li>
+            <%= link_to sign_out_path, class: 'waves-effect waves-teal' do %>
+              <i class="material-icons">exit_to_app</i><%= t('sign_out') %></a>
+            <% end %>
+          </li>
         <% end -%>
       </ul>
     <% end -%>
