@@ -3,43 +3,41 @@
     <i class="material-icons">arrow_back</i>
   <% end %>
 <% end %>
+<% content_for :menu do%>
+  <li>
+    <%= link_to edit_oauth_application_path(@application) do %>
+      <i class="material-icons">mode_edit</i>
+    <% end %>
+  </li>
+  <li>
+    <%= render 'delete_form', application: @application %>
+  </li>
+<% end %>
 <div class="container">
   <div class="row">
-    <div class="col m9 card">
-      <h4 class="center-align"><%= @application.name %></h4>
-      <h5><%= t('.application_id') %>:</h5>
-      <p class="code"><code id="application_id"><%= @application.uid %></code></p>
+    <h4 class="center-align"><%= @application.name %></h4>
+    <h5><%= t('.application_id') %>:</h5>
+    <p class="code"><code id="application_id"><%= @application.uid %></code></p>
 
-      <h5><%= t('.secret') %>:</h5>
-      <p class="code"><code id="secret"><%= @application.secret %></code></p>
+    <h5><%= t('.secret') %>:</h5>
+    <p class="code"><code id="secret"><%= @application.secret %></code></p>
 
-      <h5><%= t('.scopes') %>:</h5>
-      <p class="code"><code id="scopes"><%= @application.scopes %></code></p>
+    <h5><%= t('.scopes') %>:</h5>
+    <p class="code"><code id="scopes"><%= @application.scopes %></code></p>
 
-      <h5><%= t('.callback_urls') %>:</h5>
+    <h5><%= t('.callback_urls') %>:</h5>
 
-      <table class="bordered code">
-        <% @application.redirect_uri.split.each do |uri| %>
-          <tr>
-            <td>
-              <code><%= uri %></code>
-            </td>
-            <td>
-              <%= link_to t('doorkeeper.applications.buttons.authorize'), oauth_authorization_path(client_id: @application.uid, redirect_uri: uri, response_type: 'code', scope: @application.scopes), class: 'btn light-green', target: '_blank' %>
-            </td>
-          </tr>
-        <% end %>
-      </table>
-    </div>
-
-    <div class="col m3">
-      <p>
-        <%= link_to edit_oauth_application_path(@application), class: 'btn blue' do %>
-          <i class="material-icons left">mode_edit</i><%= t('doorkeeper.applications.buttons.edit') %>
-        <% end %>
-      </p>
-
-      <p><%= render 'delete_form', application: @application %></p>
-    </div>
+    <table class="bordered code">
+      <% @application.redirect_uri.split.each do |uri| %>
+        <tr>
+          <td>
+            <code><%= uri %></code>
+          </td>
+          <td>
+            <%= link_to t('doorkeeper.applications.buttons.authorize'), oauth_authorization_path(client_id: @application.uid, redirect_uri: uri, response_type: 'code', scope: @application.scopes), class: 'btn light-green', target: '_blank' %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>

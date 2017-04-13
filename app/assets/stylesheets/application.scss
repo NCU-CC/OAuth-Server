@@ -22,3 +22,13 @@ main {
 footer .page-footer {
   margin-top: 0px;
 }
+.btn-menu {
+  padding: 0 15px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  transition: background-color .3s;
+}
+.btn-menu:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
