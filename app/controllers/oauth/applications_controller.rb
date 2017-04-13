@@ -1,4 +1,5 @@
 class Oauth::ApplicationsController < Doorkeeper::ApplicationsController
+  include ApplicationHelper
   skip_before_action :authenticate_admin!
   prepend_before_action :set_user
 
@@ -25,6 +26,10 @@ class Oauth::ApplicationsController < Doorkeeper::ApplicationsController
   end
 
   def set_application
-    @application = @user.oauth_applications.find(params[:id])
+    if authorization_server_owner?
+      @application = Doorkeeper::Application.find(params[:id])
+    else
+      @application = @user.oauth_applications.find(params[:id])
+    end
   end
 end

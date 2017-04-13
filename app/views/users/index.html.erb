@@ -1,0 +1,18 @@
+<%= content_tag :div, class: "row" do %>
+  <% @users.each do |user| %>
+    <%= content_tag :div, class: "col s12 m6 l4" do %>
+      <%= content_tag :div, id: "user_#{user.portal_id}", class: "card" do %>
+        <%= content_tag :div, class: "card-content" do %>
+          <span class="card-title">
+            <%- if user.authorization_server_owner %>
+              <i class="material-icons tiny">laptop_mac</i>
+            <% end -%>
+            <%= link_to user.portal_id, oauth_user_path(user) %>
+          </span>
+          <p><%= user.created_at %></p>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+

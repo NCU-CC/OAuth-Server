@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122002105) do
+ActiveRecord::Schema.define(version: 20170331075643) do
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id", null: false
@@ -55,8 +55,9 @@ ActiveRecord::Schema.define(version: 20161122002105) do
 
   create_table "users", force: :cascade do |t|
     t.string   "portal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "authorization_server_owner"
   end
 
 end

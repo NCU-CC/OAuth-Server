@@ -6,16 +6,17 @@
 <div class="container">
   <div class="row">
     <div class="col m9 card">
-      <h4><%= t('.application_id') %>:</h4>
+      <h4 class="center-align"><%= @application.name %></h4>
+      <h5><%= t('.application_id') %>:</h5>
       <p class="code"><code id="application_id"><%= @application.uid %></code></p>
 
-      <h4><%= t('.secret') %>:</h4>
+      <h5><%= t('.secret') %>:</h5>
       <p class="code"><code id="secret"><%= @application.secret %></code></p>
 
-      <h4><%= t('.scopes') %>:</h4>
+      <h5><%= t('.scopes') %>:</h5>
       <p class="code"><code id="scopes"><%= @application.scopes %></code></p>
 
-      <h4><%= t('.callback_urls') %>:</h4>
+      <h5><%= t('.callback_urls') %>:</h5>
 
       <table class="bordered code">
         <% @application.redirect_uri.split.each do |uri| %>

@@ -1,0 +1,16 @@
+<%= content_tag :div, class: "row" do %>
+  <% @owners.each do |owner| %>
+    <%= content_tag :div, class: "col s12 m6 l4" do %>
+      <%= content_tag :div, id: "owner_#{owner.portal_id}", class: "card" do %>
+        <%= content_tag :div, class: "card-content" do %>
+          <span class="card-title">
+            <i class="material-icons tiny">laptop_mac</i>
+            <%= owner.portal_id %>
+          </span>
+          <p><%= owner.created_at %></p>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+

@@ -1,0 +1,9 @@
+<% content_for :navigate_up do %>
+  <%= link_to oauth_users_path do %>
+    <i class="material-icons">arrow_back</i>
+  <% end %>
+<% end %>
+
+<h5 class="center-align"><%= @user.portal_id %>'s <%= t('applications') %></h5>
+
+<%= render 'doorkeeper/applications/index' %>

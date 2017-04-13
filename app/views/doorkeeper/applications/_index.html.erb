@@ -1,0 +1,12 @@
+<%= content_tag :div, class: "row" do %>
+  <% @applications.each do |application| %>
+    <%= content_tag :div, class: "col s12 m6 l4" do %>
+      <%= content_tag :div, id: "application_#{application.id}", class: "card" do %>
+        <%= content_tag :div, class: "card-content" do %>
+          <span class="card-title"><%= link_to application.name, oauth_application_path(application) %></span>
+          <p><%= application.redirect_uri %></p>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

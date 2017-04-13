@@ -27,7 +27,9 @@
               <div class="collapsible-body">
                 <ul>
                   <li><a class="waves-effect waves-teal"><%= t('about') %></a></li>
-                  <li><a href="/oauth/authorized_applications" class="waves-effect waves-teal"><%= t('authorized_applications') %></a></li>
+                  <li>
+                    <%= link_to t('authorized_applications'), oauth_authorized_applications_path, class: 'waves-effect waves-teal' %>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -37,10 +39,27 @@
                 <ul>
                   <li><a class="waves-effect waves-teal"><%= t('about') %></a></li>
                   <li><a class="waves-effect waves-teal"><%= t('proposal') %></a></li>
-                  <li><a href="/oauth/applications" class="waves-effect waves-teal"><%= t('applications') %></a></li>
+                  <li>
+                    <%= link_to t('applications'), oauth_applications_path, class: 'waves-effect waves-teal' %>
+                  </li>
                 </ul>
               </div>
             </li>
+            <%- if authorization_server_owner? %>
+              <li>
+                <a class="collapsible-header waves-effect waves-teal"><i class="material-icons">laptop_mac</i><%= t('authorization_server_owner') %></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li>
+                      <%= link_to t('owners'), oauth_owners_path, class: 'waves-effect waves-teal' %>
+                    </li>
+                    <li>
+                      <%= link_to t('users'), oauth_users_path, class: 'waves-effect waves-teal' %>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            <% end -%>
           </ul>
         </li>
         <%- if sign_in? %>
@@ -62,7 +81,7 @@
             </li>
           </ul>
         <% end -%>
-        <%= link_to 'NCU OAuth', root_path, class: 'brand-logo' %>
+        <%= link_to t('title'), root_path, class: 'brand-logo' %>
         <%- if content_for? :menu %>
           <ul class="right">
             <%= yield :menu %>
