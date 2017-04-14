@@ -1,15 +1,37 @@
+<% content_for :js do %>
+  <%= javascript_include_tag "users", 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<% content_for :menu do %>
+  <li>
+    <a id="show-switch">
+      <i class="material-icons">laptop_mac</i>
+    </a>
+  </li>
+<% end %>
+
 <%= content_tag :div, class: "row" do %>
   <% @users.each do |user| %>
     <%= content_tag :div, class: "col s12 m6 l4" do %>
       <%= content_tag :div, id: "user_#{user.portal_id}", class: "card" do %>
         <%= content_tag :div, class: "card-content" do %>
           <span class="card-title">
-            <%- if user.authorization_server_owner %>
-              <i class="material-icons tiny">laptop_mac</i>
-            <% end -%>
+            <i class="material-icons tiny" style="display: <%= user.authorization_server_owner? ? 'inline-block' : 'none' %>;">laptop_mac</i>
             <%= link_to user.portal_id, oauth_user_path(user) %>
           </span>
           <p><%= user.created_at %></p>
+        <% end %>
+        <%= content_tag :div, class: "card-action owner-switch", style: "display: none;" do %>
+          <%= form_for user, url: oauth_user_path(user), method: "put", remote: true do |f| %>
+            <%= submit_tag '', style: "display: none;" %>
+            <%= content_tag :div, class: "switch" do %>
+              <label>
+                Admin
+                <%= f.check_box :authorization_server_owner, class: "owner-check-box" %>
+                <span class="lever"></span>
+              </label>
+            <% end %>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>

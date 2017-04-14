@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require materialize-sprockets
-//= require_tree .
 $(document).on('turbolinks:load', function() {
   $('#button-menu').sideNav({ draggable: true });
   $('.collapsible').collapsible();

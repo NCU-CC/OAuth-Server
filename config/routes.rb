@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   namespace :oauth do
     get 'manage', to: 'manage#index'
-    resources :users, only: [:index, :show]
-    resources :owners, only: [:index, :create, :destroy], controller: 'authorization_server_owners'
+    resources :users, only: [:index, :update, :show]
+    resources :owners, only: [:index, :destroy], controller: 'authorization_server_owners'
   end
 
   match 'auth/ncu_portal_open_id/callback', to: 'sessions#create', via: [:get, :post]

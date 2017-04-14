@@ -12,6 +12,12 @@ module Oauth
       @applications = @user.oauth_applications
     end
 
+    def update
+      @user.authorization_server_owner = params[:user][:authorization_server_owner]
+      @user.save
+      render json: @user
+    end
+
     private
 
     def set_user

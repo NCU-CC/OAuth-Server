@@ -20,18 +20,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  title: "NCU OAuth"
-  contact_us: "Contact Us"
-  email: "mailto:mobile@cc.ncu.edu.tw"
-  welcome: "Welcome To NCU OAuth"
-  sign_in: "Sign in with NCU Portal"
-  sing_out: "Sign out"
-  end_user: "End user"
-  developer: "Developer"
-  authorization_server_owner: "Authorization Server Owner"
-  about: "About"
-  authorized_applications: "Authorized applications"
-  proposal: "Proposal"
-  applications: "Applications"
-  owners: "Owners"
-  users: "Users"
+  title: 'NCU OAuth'
+  contact_us: 'Contact Us'
+  email: 'mailto:mobile@cc.ncu.edu.tw'
+  welcome: 'Welcome To NCU OAuth'
+  sign_in: 'Sign in with NCU Portal'
+  sing_out: 'Sign out'
+  end_user: 'End user'
+  developer: 'Developer'
+  authorization_server_owner: 'Authorization Server Owner'
+  about: 'About'
+  authorized_applications: 'Authorized applications'
+  proposal: 'Proposal'
+  applications: 'Applications'
+  owners: 'Owners'
+  users: 'Users'
+  remove: 'Remove'
+  confirm: 'Are you sure?'
+  notice:
+    owner:
+      destroy: 'Authorization server owner removed.'
+    user:
+      update: 'User updated.'

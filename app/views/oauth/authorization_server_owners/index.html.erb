@@ -9,6 +9,9 @@
           </span>
           <p><%= owner.created_at %></p>
         <% end %>
+        <%= content_tag :div, class: "card-action" do %>
+          <%= render 'delete_form', owner: owner %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
