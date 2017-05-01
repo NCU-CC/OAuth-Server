@@ -5,7 +5,7 @@
     <title><%= t('title') %></title>
     <%= csrf_meta_tags %>
     <%- if flash[:notice].present? %>
-      <meta name="notice" content="<%= flash[:notice] %>">
+      <%= meta_tag :notice, flash[:notice] %>
     <% end -%>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>

@@ -20,7 +20,9 @@ class SessionsController < Doorkeeper::ApplicationController
     redirect_to root_path
   end
 
+  private
+
   def portal_id
-    request.env['omniauth.auth'].info[:student_id]
+    request.env['omniauth.auth'].uid[/\/([^\/]*)$/, 1]
   end
 end

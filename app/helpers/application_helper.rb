@@ -29,4 +29,8 @@ module ApplicationHelper
       end.join.html_safe
     end
   end
+
+  def meta_tag name, content
+    tag :meta, name: name.to_s, content: content
+  end
 end
