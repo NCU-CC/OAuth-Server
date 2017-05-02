@@ -1,5 +1,6 @@
 class SessionsController < Doorkeeper::ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :destroy]
+  add_flash_types :sign
 
   def index
     redirect_to root_path
@@ -17,7 +18,7 @@ class SessionsController < Doorkeeper::ApplicationController
 
   def destroy
     reset_session
-    redirect_to root_path
+    redirect_to root_path, sign: 'out'
   end
 
   private

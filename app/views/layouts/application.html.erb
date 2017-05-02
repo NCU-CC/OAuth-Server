@@ -7,6 +7,9 @@
     <%- if flash[:notice].present? %>
       <%= meta_tag :notice, flash[:notice] %>
     <% end -%>
+    <%- if flash[:sign].present? %>
+      <%= meta_tag :sign, flash[:sign] %>
+    <% end -%>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
