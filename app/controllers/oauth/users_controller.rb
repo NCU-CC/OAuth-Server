@@ -14,6 +14,7 @@ module Oauth
 
     def update
       @user.authorization_server_owner = params[:user][:authorization_server_owner]
+      @user.disabled = params[:user][:disabled]
       @user.save
       render json: @user
     end

@@ -16,21 +16,35 @@
       <%= content_tag :div, id: "user_#{user.portal_id}", class: "card" do %>
         <%= content_tag :div, class: "card-content" do %>
           <span class="card-title">
-            <i class="material-icons tiny" style="display: <%= user.authorization_server_owner? ? 'inline-block' : 'none' %>;">laptop_mac</i>
+            <i class="material-icons tiny" id="owner-icon" style="display: <%= user.authorization_server_owner? ? 'inline-block' : 'none' %>;">laptop_mac</i>
             <%= link_to user.portal_id, oauth_user_path(user) %>
+            <i class="material-icons tiny" id="disabled-icon" style="display: <%= user.disabled? ? 'inline-block' : 'none' %>;">block</i>
           </span>
           <p><%= user.created_at %></p>
         <% end %>
-        <%= content_tag :div, class: "card-action owner-switch", style: "display: none;" do %>
+        <%= content_tag :div, class: "card-action user-switch", style: "display: none;" do %>
           <%= form_for user, url: oauth_user_path(user), method: "put", remote: true do |f| %>
             <%= submit_tag '', style: "display: none;" %>
-            <%= content_tag :div, class: "switch" do %>
-              <label>
-                Admin
-                <%= f.check_box :authorization_server_owner, class: "owner-check-box" %>
-                <span class="lever"></span>
-              </label>
-            <% end %>
+            <div class="row">
+              <div class="col s6">
+                <%= content_tag :div, class: "switch" do %>
+                  <label>
+                    Admin
+                    <%= f.check_box :authorization_server_owner, class: "user-check-box" %>
+                    <span class="lever"></span>
+                  </label>
+                <% end %>
+              </div>
+              <div class="col s6">
+                <%= content_tag :div, class: "switch" do %>
+                  <label>
+                    Disable
+                    <%= f.check_box :disabled, class: "user-check-box" %>
+                    <span class="lever"></span>
+                  </label>
+                <% end %>
+              </div>
+            </div>
           <% end %>
         <% end %>
       <% end %>

@@ -4,12 +4,11 @@ module ApplicationHelper
   end
 
   def sign_in?
-    portal_id.present?
+    portal_id.present? && current_user.present?
   end
 
-  def user
-    return nil unless sign_in?
-    User.find_by(portal_id: session[:portal_id])
+  def current_user
+    @current_user ||= User.find_by(portal_id: session[:portal_id])
   end
 
   def authenticate_authorization_server_owner!
@@ -17,7 +16,7 @@ module ApplicationHelper
   end
 
   def authorization_server_owner?
-    sign_in? && user.authorization_server_owner
+    sign_in? && current_user.authorization_server_owner
   end
 
   def errors_for object, method
