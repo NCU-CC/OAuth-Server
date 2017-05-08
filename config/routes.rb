@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'manage', to: 'manage#index'
     resources :users, only: [:index, :update, :show]
     resources :owners, only: [:index, :destroy], controller: 'authorization_server_owners'
+    resources :disabled_users, only: [:index, :destroy]
   end
 
   match 'auth/ncu_portal_open_id/callback', to: 'sessions#create', via: [:get, :post]

@@ -34,11 +34,14 @@ en:
   proposal: 'Proposal'
   applications: 'Applications'
   owners: 'Owners'
+  disabled_users: 'Disabled users'
   users: 'Users'
   remove: 'Remove'
   confirm: 'Are you sure?'
   notice:
     owner:
       destroy: 'Authorization server owner removed.'
+    disabled_user:
+      destroy: 'User enabled.'
     user:
       update: 'User updated.'

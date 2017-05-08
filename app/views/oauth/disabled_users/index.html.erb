@@ -1,0 +1,19 @@
+<%= content_tag :div, class: "row" do %>
+  <% @disabled_users.each do |user| %>
+    <%= content_tag :div, class: "col s12 m6 l4" do %>
+      <%= content_tag :div, id: "disabled_user_#{user.portal_id}", class: "card" do %>
+        <%= content_tag :div, class: "card-content" do %>
+          <span class="card-title">
+            <%= user.portal_id %>
+            <i class="material-icons tiny">block</i>
+          </span>
+          <p><%= user.created_at %></p>
+        <% end %>
+        <%= content_tag :div, class: "card-action" do %>
+          <%= render 'delete_form', disabled_user: user %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
