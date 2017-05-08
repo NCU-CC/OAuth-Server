@@ -13,12 +13,13 @@ module Oauth
     # -- all .rb files in that directory are automatically loaded.
 
     config.to_prepare do
-      Doorkeeper::ApplicationsController.layout "application"
-      Doorkeeper::AuthorizedApplicationsController.layout "application"
+      Doorkeeper::ApplicationsController.layout 'application'
+      Doorkeeper::AuthorizedApplicationsController.layout 'application'
     end
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
       html_tag
     }
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.time_zone = 'Asia/Taipei'
   end
 end
