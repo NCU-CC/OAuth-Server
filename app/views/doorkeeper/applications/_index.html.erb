@@ -1,12 +1,16 @@
 <%= content_tag :div, class: "row" do %>
-  <% @applications.each do |application| %>
-    <%= content_tag :div, class: "col s12 m6 l4" do %>
-      <%= content_tag :div, id: "application_#{application.id}", class: "card" do %>
-        <%= content_tag :div, class: "card-content" do %>
-          <span class="card-title"><%= link_to application.name, oauth_application_path(application) %></span>
-          <p><%= application.redirect_uri %></p>
+  <%- if @applications.empty? %>
+    <div class="center-align grey-text empty-message"><%= t('empty.applications') %></div>
+  <%- else %>
+    <% @applications.each do |application| %>
+      <%= content_tag :div, class: "col s12 m6 l4" do %>
+        <%= content_tag :div, id: "application_#{application.id}", class: "card" do %>
+          <%= content_tag :div, class: "card-content" do %>
+            <span class="card-title"><%= link_to application.name, oauth_application_path(application) %></span>
+            <p><%= application.redirect_uri %></p>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  <% end -%>
 <% end %>

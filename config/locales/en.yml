@@ -38,6 +38,10 @@ en:
   users: 'Users'
   remove: 'Remove'
   confirm: 'Are you sure?'
+  empty:
+    applications: 'No applications.'
+    authorized_applications: 'No authorized applications.'
+    disabled_users: 'No disabled users.'
   notice:
     owner:
       destroy: 'Authorization server owner removed.'

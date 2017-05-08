@@ -1,15 +1,19 @@
 <%= content_tag :div, class: "row" do %>
-  <% @applications.each do |application| %>
-    <%= content_tag :div, class: "col s12 m6 l4" do %>
-      <%= content_tag :div, class: "card" do %>
-        <%= content_tag :div, class: "card-content" do %>
-          <span class="card-title"><%= application.name %></span>
-          <p><%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %></p>
-        <% end %>
-        <%= content_tag :div, class: "card-action" do %>
-          <%= render 'delete_form', application: application %>
+  <%- if @applications.empty? %>
+    <div class="center-align grey-text empty-message"><%= t('empty.authorized_applications') %></div>
+  <%- else %>
+    <% @applications.each do |application| %>
+      <%= content_tag :div, class: "col s12 m6 l4" do %>
+        <%= content_tag :div, class: "card" do %>
+          <%= content_tag :div, class: "card-content" do %>
+            <span class="card-title"><%= application.name %></span>
+            <p><%= application.created_at.strftime(t('doorkeeper.authorized_applications.index.date_format')) %></p>
+          <% end %>
+          <%= content_tag :div, class: "card-action" do %>
+            <%= render 'delete_form', application: application %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+    <% end -%>
   <% end %>
 <% end %>
