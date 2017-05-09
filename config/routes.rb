@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   use_doorkeeper do
     controllers applications: 'oauth/applications'
   end
-  get 'oauth/token/old_info/:token_string', to: 'token_info#show'
 
   namespace :oauth do
     get 'manage', to: 'manage#index'
+    get 'token/old_info/:token_string', to: 'token_info#show'
     resources :users, only: [:index, :update, :show]
     resources :owners, only: [:index, :destroy], controller: 'authorization_server_owners'
     resources :disabled_users, only: [:index, :destroy]
