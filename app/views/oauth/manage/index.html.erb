@@ -1,9 +1,98 @@
 <%- if sign_in? %>
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><%= t('index.about.user.title') %></span>
+        <p><%= t('index.about.user.content') %></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><%= t('index.about.developer.title') %></span>
+        <p><%= t('index.about.developer.content_html', :href => link_to(t('app_store'), t('app_store_link'))) %></p>
+        <p><%= t('index.about.developer.sub_content_html', :href => link_to(t('proposal'), t('proposal_link'))) %></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><%= t('index.reference.title') %></span>
+        <p><%= t('index.reference.content_html', :href => link_to(t('api'), t('api_link'))) %></p>
+        <p><%= t('index.reference.sub_content_html', :href => link_to(t('repo'), t('repo_link'))) %></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><%= t('index.proposal.title') %></span>
+        <p><%= t('index.proposal.content_html', :href => link_to(t('proposal'), t('proposal_link'))) %></a></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><%= t('index.problem.title') %></span>
+        <p><%= t('index.problem.content_html', :slack => link_to('Slack', t('slack')), :email => link_to('E-mail', t('email'))) %></p>
+      </div>
+    </div>
+    <div class="card orange lighten-5">
+      <div class="card-content">
+        <span class="card-title"><%= t('index.api.title') %> <span class="chip"><%= t('developer') %></span></span>
+        <p><%= t('index.api.content') %></p>
+        <p><%= t('index.api.sub_content') %></p>
+      </div>
+    </div>
+    <div class="card orange lighten-5">
+      <div class="card-content">
+        <span class="card-title"><%= t('index.usage.title') %> <span class="chip"><%= t('developer') %></span></span>
+        <p><%= t('index.usage.content_html', :email => link_to('E-mail', t('email'))) %></p>
+        <table>
+          <tr>
+            <th><%= t('index.usage.normal_th') %></th>
+            <td><%= t('index.usage.normal_td') %>s</td>
+          </tr>
+          <tr>
+            <th><%= t('index.usage.personnel_th') %></th>
+            <td><%= t('index.usage.personnel_td') %><br \><span class="red-text"><%= t('index.usage.personnel_caution') %></span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="card orange lighten-5">
+      <div class="card-content">
+        <span class="card-title"><%= t('index.blacklist.title') %> <span class="chip"><%= t('developer') %></span></span>
+        <p><%= t('index.blacklist.content') %></p>
+      </div>
+    </div>
+  </div>
 <%- else %>
   <div class="row">
-    <div class="col s12 m6 l4 offset-m3 offset-l4">
-      <div class="card hoverable z-depth-5">
-        <div class="card-content">
+    <div class="section white valign-wrapper">
+      <div class="row container center-align">
+        <h1 class="light-blue-text text-darken-2"><%= t('welcome') %></h1>
+        <h3 class="grey-text text-darken-3 lighten-3"><%= t('welcome_sub') %></h3>
+      </div>
+    </div>
+    <div class="parallax-container">
+      <div class="parallax"><%= image_tag 'index_1.jpg' %></div>
+    </div>
+    <div class="section white valign-wrapper">
+      <div class="row container">
+        <h4 class="header"><%= t('index.about.user.title') %></h4>
+        <p class="grey-text text-darken-3 lighten-3"><%= t('index.about.user.content') %></p>
+        <br />
+        <h4 class="header"><%= t('index.about.developer.title') %></h4>
+        <p class="grey-text text-darken-3 lighten-3"><%= t('index.about.developer.content_html', :href => link_to(t('app_store'), t('app_store_link'))) %></p>
+        <p class="grey-text text-darken-3 lighten-3"><%= t('index.about.developer.sub_content_html', :href => link_to(t('proposal'), t('proposal_link'))) %></p>
+      </div>
+    </div>
+    <div class="parallax-container">
+      <div class="parallax"><%= image_tag 'index_2.jpg' %></div>
+    </div>
+    <div class="section white valign-wrapper">
+      <div class="row container center-align">
+        <div class="center-align">
+          <p class="grey-text text-darken-3 lighten-3"><%= t('index.ready_signin') %></p>
+        </div>
+        <br />
+        <div class="col s12 m6 l4 xl4 offset-m3 offset-l4 offset-xl4">
           <%= form_tag '/sign_in' do %>
             <%= submit_tag t('sign_in'), class: 'waves-effect waves-light btn' %>
           <% end %>
