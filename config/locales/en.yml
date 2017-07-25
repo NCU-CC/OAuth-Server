@@ -24,6 +24,7 @@ en:
   contact_us: 'Contact Us'
   email: 'mailto:mobile@cc.ncu.edu.tw'
   welcome: 'Welcome To NCU OAuth'
+  welcome_sub: 'Manage authorized applications and applied usage for NCU APIs.'
   sign_in: 'Sign in with NCU Portal'
   sing_out: 'Sign out'
   end_user: 'End user'
@@ -49,3 +50,47 @@ en:
       destroy: 'User enabled.'
     user:
       update: 'User updated.'
+  app_store: 'NCU App Store'
+  app_store_link: 'http://appstore.cc.ncu.edu.tw/'
+  proposal: 'Developer Proposal'
+  proposal_link: 'http://ncu-cc.github.io/proposal.html'
+  api: 'NCU API'
+  api_link: 'https://github.com/NCU-CC/API-Documentation'
+  repo: 'GitHub Repositories'
+  repo_link: 'https://github.com/NCU-CC'
+  slack: 'http://open-ncu.slack.com/'
+  index:
+    ready_signin: 'Sign in and manage application authorizations now.'
+    about:
+      user:
+        title: 'End User Description'
+        content: 'This system is the manage panel of NCU OAuth for users to manage authorized applications. You can view which applications and the scope of authorizations you have authorized and to manage the authorization. You can revoke your authorization to the applications; applications revoked have to be reauthorized to use.'
+      developer:
+        title: 'If You Are a Developer...'
+        content_html: 'This system also allows developers to apply for and manage the use of NCU API. The applications developers create can be put onto %{href}.'
+        sub_content_html: 'In addition to the generally self-developed apps, we also offer proposals that allow developers to develop applications for use at National Central University faculties and students. Please refer to %{href} for further information.'
+    reference:
+      title: 'Reference Documents'
+      content_html: 'All of our services are open source, including the %{href}, and provide multiple apps as an example of using the NCU API and its derivative services.'
+      sub_content_html: 'Welcome to explore our %{href}.'
+    proposal:
+      title: 'Developer Proposal'
+      content_html: 'For the students of the National Central University, we have provided a method of proposal so that you can create creative and suitable application services for National Central University faculties and students to use while get paid for your work at the same time. Works completed through proposal are required to adapt MIT license. For details, please refer to %{href}.'
+    problem:
+      title: 'Problems Report'
+      content_html: 'We currently use %{slack} and %{email} as a platform for problems report, users and developers who have any questions are welcomed through these two platforms.'
+    api:
+      title: 'API Gateway'
+      content: 'Please use API Gateway if possible.'
+      sub_content: 'Regardless of whether you are developing a website or a smart device application, we recommend that you place client_id, client_secret, and api_tokens on your own host and complete the call for API through this gateway. Because as long as they are distributed to the clients, no matter what way you use to protect these datas, they are still possible to be obtained by the clients.'
+    usage:
+      title: 'Usage Restrictions'
+      content_html: 'Each NCU API has a monthly usage limit, application will be added to watch list if exceeded. Please %{email} us if you have special requirements.'
+      normal_th: 'Normal API'
+      normal_td: '25,000 Requests per month'
+      personnel_th: 'Personnel-Service'
+      personnel_td: '25,000 Requests per month'
+      personnel_caution: 'The number of attempts should not exceed 5 per minutes.'
+    blacklist:
+      title: 'Blacklist'
+      content: 'If the application service is blacklisted, the client_id, client_secret, and API token for that service will be invalidated. If the developer account is added to the blacklist, the account will no longer be able to log into the system; the application service owned by the developer will be invalidated.'
