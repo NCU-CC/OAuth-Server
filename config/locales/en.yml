@@ -64,10 +64,10 @@ en:
     about:
       user:
         title: 'End User Description'
-        content: 'This system is the manage panel of NCU OAuth for users to manage authorized applications. You can view which applications and the scope of authorizations you have authorized and to manage the authorization. You can revoke your authorization to the applications; applications revoked have to be reauthorized to use.'
+        content: 'This system is the management panel of NCU OAuth for users to manage authorized applications. You can view the applications and the scope of authorizations you have authorized and manage the authorization. You can revoke your authorization to the applications; applications revoked have to be reauthorized to use.'
       developer:
         title: 'If You Are a Developer...'
-        content_html: 'This system also allows developers to apply for and manage the use of NCU API. The applications developers create can be put onto %{href}.'
+        content_html: 'This system also allows developers to apply for and manage the use of NCU API. The application developers creation can be put onto %{href}.'
         sub_content_html: 'In addition to the generally self-developed apps, we also offer proposals that allow developers to develop applications for use at National Central University faculties and students. Please refer to %{href} for further information.'
     reference:
       title: 'Reference Documents'
@@ -82,10 +82,10 @@ en:
     api:
       title: 'API Gateway'
       content: 'Please use API Gateway if possible.'
-      sub_content: 'Regardless of whether you are developing a website or a smart device application, we recommend that you place client_id, client_secret, and api_tokens on your own host and complete the call for API through this gateway. Because as long as they are distributed to the clients, no matter what way you use to protect these datas, they are still possible to be obtained by the clients.'
+      sub_content: 'Regardless of whether you are developing a website or a smart device application, we recommend that you place client_id, client_secret, and api_tokens on your own host and complete the call for API through this gateway. Because as long as they are distributed to the clients, no matter what way you use to protect these data, they are still possible to be obtained by the clients.'
     usage:
       title: 'Usage Restrictions'
-      content_html: 'Each NCU API has a monthly usage limit, application will be added to watch list if exceeded. Please %{email} us if you have special requirements.'
+      content_html: 'Each NCU API has a monthly usage limitation, and an application will be added to watch list if it exceeds the limitation. Please %{email} us if you have special requirements.'
       normal_th: 'Normal API'
       normal_td: '25,000 Requests per month'
       personnel_th: 'Personnel-Service'
@@ -93,4 +93,4 @@ en:
       personnel_caution: 'The number of attempts should not exceed 5 per minutes.'
     blacklist:
       title: 'Blacklist'
-      content: 'If the application service is blacklisted, the client_id, client_secret, and API token for that service will be invalidated. If the developer account is added to the blacklist, the account will no longer be able to log into the system; the application service owned by the developer will be invalidated.'
+      content: 'If the application service is blacklisted, the client_id, client_secret, and API token for that service will be invalidated. If the developer account is added to the blacklist, the account will no longer be able to sign in to the system; the application service owned by the developer will be invalidated.'
