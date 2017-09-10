@@ -4,7 +4,19 @@ class Oauth::ApplicationsController < Doorkeeper::ApplicationsController
   prepend_before_action :set_user
 
   def index
-    @applications = @user.oauth_applications
+    if authorization_server_owner? && params[:all]
+      @applications = if params[:hide]
+                        []
+                      else
+                        Doorkeeper::Application.joins(:user)
+                          .where("name LIKE ?", "%#{params[:name]}%")
+                          .where("redirect_uri LIKE ?", "%#{params[:redirect_uri]}%")
+                          .where("scopes LIKE ?", "%#{params[:scopes]}%")
+                          .where("portal_id LIKE ?", "%#{params[:portal_id]}%")
+                      end
+    else
+      @applications = @user.oauth_applications
+    end
   end
 
   # only needed if each application must have some owner

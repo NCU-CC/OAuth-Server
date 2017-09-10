@@ -52,6 +52,9 @@
                     <li>
                       <%= link_to t('users'), oauth_users_path, class: 'waves-effect waves-teal' %>
                     </li>
+                    <li>
+                      <%= link_to t('applications'), oauth_applications_path(all: true, hide: true) %>
+                    </li>
                   </ul>
                 </div>
               </li>

@@ -1,3 +1,30 @@
+<%- if authorization_server_owner? && params[:all] %>
+  <h4 class="center-align">Filter</h4>
+  <%= form_tag oauth_applications_path, method: :get do %>
+    <%= hidden_field_tag :all, true %>
+    <%= content_tag :div, class: "row" do %>
+      <%= content_tag :div, class: "input-field col s12 m6 l3" do %>
+        <%= text_field_tag :name, params[:name] %>
+        <%= label_tag :name %>
+      <% end%>
+      <%= content_tag :div, class: "input-field col s12 m6 l3" do %>
+        <%= text_field_tag :redirect_uri, params[:redirect_uri] %>
+        <%= label_tag :redirect_uri %>
+      <% end%>
+      <%= content_tag :div, class: "input-field col s12 m6 l3" do %>
+        <%= text_field_tag :scopes, params[:scopes] %>
+        <%= label_tag :scopes %>
+      <% end%>
+      <%= content_tag :div, class: "input-field col s12 m6 l3" do %>
+        <%= text_field_tag :portal_id, params[:portal_id] %>
+        <%= label_tag :portal_id, "Portal ID" %>
+      <% end%>
+    <% end %>
+    <%= content_tag :div, class: "row center-align" do %>
+      <%= button_tag "Apply", class: 'btn light-green', type: 'submit' %>
+    <% end %>
+  <% end %>
+<% end -%>
 <%= content_tag :div, class: "row" do %>
   <%- if @applications.empty? %>
     <div class="center-align grey-text empty-message"><%= t('empty.applications') %></div>

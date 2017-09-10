@@ -111,6 +111,10 @@ Doorkeeper.configure do
 end
 
 module Doorkeeper
+  class Application
+    belongs_to :user, foreign_key: 'owner_id'
+  end
+
   class AccessToken
     belongs_to :user, foreign_key: 'resource_owner_id'
 
