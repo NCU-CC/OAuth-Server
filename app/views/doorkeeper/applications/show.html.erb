@@ -1,5 +1,5 @@
 <% content_for :navigate_up do %>
-  <%= link_to oauth_applications_path do %>
+  <%= link_to session[:applications_index] do %>
     <i class="material-icons">arrow_back</i>
   <% end %>
 <% end %>

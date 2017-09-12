@@ -4,6 +4,7 @@ class Oauth::ApplicationsController < Doorkeeper::ApplicationsController
   prepend_before_action :set_user
 
   def index
+    session[:applications_index] = request.fullpath
     if authorization_server_owner? && params[:all]
       @applications = if params[:hide]
                         []

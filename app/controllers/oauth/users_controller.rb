@@ -9,6 +9,7 @@ module Oauth
     end
 
     def show
+      session[:applications_index] = request.fullpath
       @applications = @user.oauth_applications
     end
 
