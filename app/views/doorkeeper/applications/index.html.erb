@@ -1,6 +1,8 @@
 <%= render 'index' %>
-<% content_for :menu do %>
-  <%= link_to new_oauth_application_path do %>
-    <i class="large material-icons">add</i>
+<%- unless params[:all] %>
+  <% content_for :menu do %>
+    <%= link_to new_oauth_application_path do %>
+      <i class="large material-icons">add</i>
+    <% end %>
   <% end %>
 <% end %>
