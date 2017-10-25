@@ -94,6 +94,17 @@
     </nav>
     <main role="main">
       <%= yield %>
+      <%- if flash[:sign].present? && flash[:sign] == "out" %>
+        <div id="sign-out-portal-modal" class="modal">
+          <div class="modal-content">
+            Also sign out of portal?
+          </div>
+          <div class="modal-footer">
+            <a href="https://portal.ncu.edu.tw/logout" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat"><%= t('ok') %></a>
+            <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat"><%= t('cancel') %></a>
+          </div>
+        </div>
+      <% end -%>
     </main>
     <footer class="page-footer light-blue">
       <div class="container">

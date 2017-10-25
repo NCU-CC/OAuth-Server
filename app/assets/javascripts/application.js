@@ -15,12 +15,14 @@
 //= require turbolinks
 //= require materialize-sprockets
 $(document).on('turbolinks:load', function() {
-	$('#button-menu').sideNav({ draggable: true });
-	$('.collapsible').collapsible();
-	$('.parallax').parallax();
-	Waves.displayEffect();
-	Materialize.toast($('meta[name=notice]').attr('content'), 2000);
-	Materialize.updateTextFields();
-	if ($('meta[name=sign]').attr('content') == 'out' && confirm('Also sign out of portal?'))
-		window.open('https://portal.ncu.edu.tw/logout', '_blank');
+  $('#button-menu').sideNav({ draggable: true });
+  $('.collapsible').collapsible();
+  $('.parallax').parallax();
+  Waves.displayEffect();
+  Materialize.toast($('meta[name=notice]').attr('content'), 2000);
+  Materialize.updateTextFields();
+  if ($('meta[name=sign]').attr('content') == 'out') {
+    $('.modal').modal();
+    $('#sign-out-portal-modal').modal('open');
+  }
 });

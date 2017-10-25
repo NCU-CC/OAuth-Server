@@ -27,6 +27,8 @@ en:
   welcome_sub: 'Manage authorized applications and applied usage for NCU APIs.'
   sign_in: 'Sign in with NCU Portal'
   sing_out: 'Sign out'
+  ok: 'OK'
+  cancel: 'Cancel'
   end_user: 'End user'
   developer: 'Developer'
   authorization_server_owner: 'Authorization Server Owner'
