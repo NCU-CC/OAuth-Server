@@ -111,11 +111,11 @@ Doorkeeper.configure do
 end
 
 module Doorkeeper
-  class Application
+  class Application < ActiveRecord::Base
     belongs_to :user, foreign_key: 'owner_id'
   end
 
-  class AccessToken
+  class AccessToken < ActiveRecord::Base
     belongs_to :user, foreign_key: 'resource_owner_id'
 
     def as_json(_options = {})
